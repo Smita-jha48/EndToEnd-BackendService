@@ -32,9 +32,6 @@ const deleteEntry = async (collection_id, entry_id) => {
   return { message: 'Deleted Succefully' };
 };
 
-const allCollections = async () => {
-  return Collection.findAll();
-};
 
 const getEntries = async (collection_id) => {
   const collection = await Collection.findOne({ where: { id: collection_id }, include: Entry });
@@ -44,4 +41,4 @@ const getEntries = async (collection_id) => {
   return collection.Entries;
 };
 
-module.exports = {  allCollections, getEntries, addEntries, editEntry, deleteEntry };
+module.exports = { getEntries, addEntries, editEntry, deleteEntry };

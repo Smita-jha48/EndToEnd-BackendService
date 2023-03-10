@@ -5,9 +5,6 @@ const { entryController } = require('../controllers');
 router.route('/add')
   .post(entryController.addEntries);
 
-router.route('/collections')
-  .get(entryController.allCollections);
-
 router.route('/entries')
   .post(entryController.getEntries);
 

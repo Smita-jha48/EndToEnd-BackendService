@@ -14,6 +14,21 @@ const createContent = async (req, res) => {
   }
 };
 
+const getAllContent = async (req, res) => {
+  try {
+    const Allcontent = await contentService.getAllContent();
+    res.status(200).json({
+      data: Allcontent
+    });
+  }
+  catch(error) {
+    res.status(500).json({
+      error: error.message
+    });
+  }
+
+};
+
 const editContentName = async (req, res) => {
   try {
     const { name, id } = req.body;
@@ -73,4 +88,4 @@ const deleteField = async (req, res) => {
   
 
 
-module.exports = { createContent, editContentName, addField, editField, deleteField};
+module.exports = {getAllContent, createContent, editContentName, addField, editField, deleteField};

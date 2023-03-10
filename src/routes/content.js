@@ -5,6 +5,9 @@ const { contentController } = require('../controllers');
 router.route('/save')
   .post(contentController.createContent);
 
+router.route('/allcontent')
+  .get(contentController.getAllContent);
+
 router.route('/editname')
   .post(contentController.editContentName);
 
